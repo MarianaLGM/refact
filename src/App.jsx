@@ -6,9 +6,9 @@ import employees from './data/employees.js'
 
 function App() {
 
-  const [value1, setValue1] = useState(0)
-  const [value2, setValue2] = useState(0)
-  const [result, setResult] = useState(null);
+  const [value1, setValue1] = useState('')
+  const [value2, setValue2] = useState('')
+  const [result, setResult] = useState('');
 
   
     //const patata1 = 1 
@@ -28,42 +28,67 @@ function App() {
       e.preventDefault();  
     }
 
+    const isNumber = (num) => {
+      return typeof num === 'number';
+    }
+
   //FUNCION SUMA
   function add (value1,value2){
-    if(!isNumber(value1) || !isNumber(value2)) {
+    const number1 = parseInt(value1);
+    const number2 = parseInt(value2);
+
+    //console.log(typeof number1)
+
+    if(!isNumber(number1) || !isNumber(number2)) {
       throw new Error ("value1 and value2 must be numbers")
     }
-    const result = value1 + value2;
-    setResult(result)
+    //console.log(number1 + number2)
+    return number1 + number2;
+    
+   
   }
 
   //FUNCION RESTA
   function subtract (value1,value2){
-    if(!isNumber(value1) || !isNumber(value2)) {
+    const number1 = parseInt(value1);
+    const number2 = parseInt(value2);
+
+    if(!isNumber(number1) || !isNumber(number2)) {
       throw new Error ("value1 and value2 must be numbers")
     }
-    const result = value1 - value2;
-    setResult(result)
+    return number1 - number2;
+    
   }
 
   //FUNCION MULTIPLICACIÓN
   function multiply (value1,value2){
-    if(!isNumber(value1) || !isNumber(value2)) {
+    const number1 = parseInt(value1);
+    const number2 = parseInt(value2);
+
+    if(!isNumber(number1) || !isNumber(number2)) {
       throw new Error ("value1 and value2 must be numbers")
     }
-    const result = value1 * value2;
-    setResult(result)
+    return number1 * number2;
   }
   //FUNCION DIVISIÓN
   function divide (value1,value2){
-    if(!isNumber(value1) || !isNumber(value2)) {
+    const number1 = parseInt(value1);
+    const number2 = parseInt(value2);
+
+    if(!isNumber(number1) || !isNumber(number2)) {
       throw new Error ("value1 and value2 must be numbers")
     }
-    if (value2===0){
-      throw new Error ("divisor must be different from 0")
-    }
-    const result = value1 / value2;
-    setResult(result)
+    return number1 / number2;
+  }
+
+  const operation = (e) => {
+    //console.log(e.target.value)
+    e.preventDefault();
+    
+    if(e.target.value === '+') {setResult(add(value1, value2))};
+    if(e.target.value === '-') {setResult(subtract(value1, value2))};
+    if(e.target.value === 'x') {setResult(multiply(value1, value2))};
+    if(e.target.value === '/') {setResult(divide(value1, value2))};
   }
 
   return (
@@ -79,14 +104,16 @@ function App() {
         <form onSubmit={handleSubmit}> 
           <input 
             type="number" 
+            value={value1}
             onChange={(e) => setValue1(e.target.value)} 
             placeholder="Agrega un número"/>
-          <button onClick={()=>add}>+</button>
-          <button onClick={()=>subtract}>-</button>
-          <button onClick={()=>multiply}>x</button>
-          <button onClick={()=>divide}>/</button>
+          <button value='+' onClick={operation}>+</button>
+          <button value='-' onClick={operation}>-</button>
+          <button value='x' onClick={operation}>x</button>
+          <button value='/' onClick={operation}>/</button>
           <input 
             type="number" 
+            value={value2}
             onChange={(e) => setValue2(e.target.value)} 
             placeholder="Agrega un número"/> 
           <button type="submit">Calcular</button>
