@@ -7,6 +7,7 @@ function App() {
 
   const [value1, setValue1] = useState(0)
   const [value2, setValue2] = useState(0)
+  const [result, setResult] = useState(null);
 
 
 
@@ -64,7 +65,8 @@ function App() {
     if(!isNumber(value1) || !isNumber(value2)) {
       throw new Error ("value1 and value2 must be numbers")
     }
-    return value1+value2
+    const result = value1 + value2;
+    setResult(result)
   }
 
   //FUNCION RESTA
@@ -72,7 +74,8 @@ function App() {
     if(!isNumber(value1) || !isNumber(value2)) {
       throw new Error ("value1 and value2 must be numbers")
     }
-    return value1-value2
+    const result = value1 - value2;
+    setResult(result)
   }
 
   //FUNCION MULTIPLICACIÓN
@@ -80,7 +83,8 @@ function App() {
     if(!isNumber(value1) || !isNumber(value2)) {
       throw new Error ("value1 and value2 must be numbers")
     }
-    return value1*value2
+    const result = value1 * value2;
+    setResult(result)
   }
   //FUNCION DIVISIÓN
   function divide (value1,value2){
@@ -90,7 +94,8 @@ function App() {
     if (value2===0){
       throw new Error ("divisor must be different from 0")
     }
-    return value1/value2
+    const result = value1 / value2;
+    setResult(result)
   }
 
   return (
@@ -119,9 +124,7 @@ function App() {
           <button type="submit">Calcular</button>
 
           <div className='result'>
-            <p>
-             
-            </p>
+            <p>Resultado:</p>
           </div>
         </form>
       </div>
@@ -131,6 +134,8 @@ function App() {
 }
 
 export default App
+
+
 
 
 
