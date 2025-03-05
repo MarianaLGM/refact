@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(102, 95, 95, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -13,14 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+
 
 body {
   margin: 0;
@@ -30,11 +23,11 @@ body {
   min-height: 100vh;
   background-color: antiquewhite;
 }
-
+/*
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+}*/
 
 button {
   border-radius: 8px;
@@ -48,10 +41,13 @@ button {
   transition: border-color 0.25s;
   margin-left: 15px;
   margin-right: 15px;
+  background-color: rgb(241, 219, 191);
 }
 button:hover {
   border-color: #9e8e3e;
 }
+
+/*
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -64,13 +60,9 @@ button:focus-visible {
   }
   a:hover {
     color: #747bff;
-  }
-  button {
-    background-color: rgb(241, 219, 191);
-  }
-}
-/********************************************************nuevo añadido**********************************************************/
-/*
+  }*/
+
+
 /*formato container bbdd empleados*/
 .containerEmployees{
   display: flex;
