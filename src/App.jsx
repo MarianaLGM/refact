@@ -69,7 +69,7 @@ function App() {
   return (
     <>
       <Top/>
-      <h2>Empleados Coquetas</h2>
+      <h2>Empleados Cocreta</h2>
         <div className="containerEmployees">
           {dataEmployees}
       </div>
@@ -79,7 +79,6 @@ function App() {
         <form onSubmit={handleSubmit}> 
           <input 
             type="number" 
-            value={value1} 
             onChange={(e) => setValue1(e.target.value)} 
             placeholder="Agrega un número"/>
           <button onClick={()=>add}>+</button>
@@ -88,7 +87,6 @@ function App() {
           <button onClick={()=>divide}>/</button>
           <input 
             type="number" 
-            value={value2} 
             onChange={(e) => setValue2(e.target.value)} 
             placeholder="Agrega un número"/> 
           <button type="submit">Calcular</button>
