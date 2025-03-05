@@ -1,8 +1,11 @@
+import cocretainc from './assets/cocretainc.jpg';
+
 const Top =()=>{
     return (
         <>
             <div className="top">
-                <img src="./assets/cocretainc.jpg" alt="Logo Empresa"/>
+                <img src={cocretainc} alt="Logo Empresa"/>
+                <h1>COQUETAS</h1>
             </div>      
         </>
     )
