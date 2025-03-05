@@ -12,7 +12,7 @@ function App() {
 
   
     //const patata1 = 1 
-    
+
     let dataEmployees = [];
     for (let i = 0; i < employees.length; i++) {
       dataEmployees.push(
@@ -69,10 +69,12 @@ function App() {
   return (
     <>
       <Top/>
+      <h2>Empleados Coquetas</h2>
         <div className="containerEmployees">
           {dataEmployees}
       </div>
 
+      <h2>Calculadora</h2>
       <div className="containerCalculator">
         <form onSubmit={handleSubmit}> 
           <input 
@@ -96,12 +98,14 @@ function App() {
           </div>
         </form>
       </div>
-      <Footer />
+      <Footer/>
     </>
   )
 }
 
 export default App
+
+
 
 
 
