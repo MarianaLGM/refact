@@ -92,7 +92,7 @@ function App() {
           <button type="submit">Calcular</button>
 
           <div className='result'>
-            <p>Resultado:</p>
+            <p>Resultado: {result}</p>
           </div>
         </form>
       </div>

@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: antiquewhite;
 }
 
 h1 {
@@ -49,7 +50,7 @@ button {
   margin-right: 15px;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #9e8e3e;
 }
 button:focus,
 button:focus-visible {
@@ -65,7 +66,7 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #ccd0f0;
+    background-color: rgb(241, 219, 191);
   }
 }
 /********************************************************nuevo añadido**********************************************************/
@@ -77,16 +78,18 @@ button:focus-visible {
   gap: 20px; 
   justify-content: center; 
   margin-top: 20px;
+
 }
 /* formato para cada empleado*/
 .containerEmployees div {
-  background-color: #fff; 
+  background-color: rgb(241, 219, 191);
   border: 1px solid #ddd; 
   border-radius: 8px; 
   padding: 15px;
   width: 200px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   text-align: center;
+
 }
 
 /*Formato Footer*/
