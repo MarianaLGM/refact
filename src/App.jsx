@@ -1,15 +1,16 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import lodearriba from './top'
+import Top from './top.jsx'
+import Footer from './footer.jsx'
 import './App.css'
 
 function App() {
-  // const [count, setCount] = useState(0)
-  // const [agrupar, sumarMas] = useState(1)
-  // const [contabilizar, quitar] = useState(0)
 
-    var movidas = [
+  const [value1, setValue1] = useState(0)
+  const [value2, setValue2] = useState(0)
+
+
+
+    const employees = [
       { name: 'Juan', lastName: 'Perez', hobbies: ['fútbol', 'lectura'], age: 25 },
       { name: 'María', lastName: 'González', hobbies: ['pintura', 'música'], age: 30 },
       { name: 'Pedro', lastName: 'López', hobbies: ['senderismo', 'cine'], age: 28 },
@@ -42,56 +43,94 @@ function App() {
       { name: 'Cristina', lastName: 'Herrero', hobbies: ['bailar', 'pintura'], age: 26 }
     ];
   
-    var patata1 = 1 
-    var almacenamiento = [];
-    for (var i = 0; i < movidas.length; i++) {
-      almacenamiento.push(
+    const patata1 = 1 
+    let dataEmployees = [];
+    for (let i = 0; i < employees.length; i++) {
+      dataEmployees.push(
         <div key={i}>
-          <p>Nombre: {movidas[i].name}</p>
-          <p>Apellidos: {movidas[i].lastName}</p>
-          <p>Hobbies: {movidas[i].hobbies.join(', ')}</p>
-          <p>Edad: {movidas[i].age}</p>
+          <p>Nombre: {employees[i].name}</p>
+          <p>Apellidos: {employees[i].lastName}</p>
+          <p>Hobbies: {employees[i].hobbies.join(', ')}</p>
+          <p>Edad: {employees[i].age}</p>
         </div>
       );
     }
+    const handleSubmit = (e) => {
+      e.preventDefault();  
+    }
 
-    var patata2 = 2
-    var resultadopatata = patata1+patata2 
-   
+  //FUNCION SUMA
+  function add (value1,value2){
+    if(!isNumber(value1) || !isNumber(value2)) {
+      throw new Error ("value1 and value2 must be numbers")
+    }
+    return value1+value2
+  }
+
+  //FUNCION RESTA
+  function subtract (value1,value2){
+    if(!isNumber(value1) || !isNumber(value2)) {
+      throw new Error ("value1 and value2 must be numbers")
+    }
+    return value1-value2
+  }
+
+  //FUNCION MULTIPLICACIÓN
+  function multiply (value1,value2){
+    if(!isNumber(value1) || !isNumber(value2)) {
+      throw new Error ("value1 and value2 must be numbers")
+    }
+    return value1*value2
+  }
+  //FUNCION DIVISIÓN
+  function divide (value1,value2){
+    if(!isNumber(value1) || !isNumber(value2)) {
+      throw new Error ("value1 and value2 must be numbers")
+    }
+    if (value2===0){
+      throw new Error ("divisor must be different from 0")
+    }
+    return value1/value2
+  }
+
   return (
-    // tengo que poner aquí el logo en lo de arriba. Que no se me olvide
-    <div className="envoltura">
-      {almacenamiento}
-      {/* <Form> */}
-      {/* {suma} --> clacula la suma de los dos elementos que hay en los inputs */}
-      {resultadopatata}
-      {cocreta} 
-      {/* ejemplo para cambiar luego patata por el resultado que tengo que guardar en las variables para que haga la suma. Puedo usar las mismas variables para el resto */}
-      {/* <button>Aquí tiene que enviar algo para que funcione</button>
-      </Form> */}
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <>
+      <Top/>
+        <div className="containerEmployees">
+          {dataEmployees}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="containerCalculator">
+        <form onSubmit={handleSubmit}> 
+          <input 
+            type="number" 
+            value={value1} 
+            onChange={(e) => setValue1(e.target.value)} 
+            placeholder="Agrega un número"/>
+          <button onClick={()=>add}>+</button>
+          <button onClick={()=>subtract}>-</button>
+          <button onClick={()=>multiply}>x</button>
+          <button onClick={()=>divide}>/</button>
+          <input 
+            type="number" 
+            value={value2} 
+            onChange={(e) => setValue2(e.target.value)} 
+            placeholder="Agrega un número"/> 
+          <button type="submit">Calcular</button>
+
+          <div className='result'>
+            <p>
+             
+            </p>
+          </div>
+        </form>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
-    </div>
-    /* <pie /> */
+      <Footer />
+    </>
   )
 }
 
 export default App
+
+
+
