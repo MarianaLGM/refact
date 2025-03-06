@@ -11,23 +11,30 @@ const Employees = () => {
         setEmployees(employeesInfo); // simulamos carga datos desde `employees`
         }, []); 
 
-    //let dataEmployees = [];
     return (
         <>
         <Top />
         <h2>Empleados Cocreta</h2>
-            <ul className="containerEmployees">
-                {employees.map((employee)=>(
-                <li key={employee.name}>
-                    <Link to={`/employees/${employee.name}`}>Nombre: {employee.name} Apellido: {employee.lastName} Hobbies: {employee.hobbies.join(', ')} Edad: {employee.age}</Link>
-                </li>
-                ))}
-            </ul>
+        <ul className="containerEmployees">
+        {employees.map((employee) => (
+            <li className="containerEmployees" key={employee.name}>
+            <Link to={`/employees/${employee.name}`}>
+                <div className="employeeInfo">
+                    <span><strong>Nombre:</strong> {employee.name}</span>
+                    <span><strong>Apellido:</strong> {employee.lastName}</span>
+                    <span><strong>Hobbies:</strong> {employee.hobbies.join(', ')}</span>
+                    <span><strong>Edad:</strong> {employee.age}</span>
+                </div>
+            </Link>
+            </li>
+            ))}
+        </ul>
         <Footer />
         </>
     );
-
 }
+
 export default Employees; 
+
 
 
