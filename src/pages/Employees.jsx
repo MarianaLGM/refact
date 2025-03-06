@@ -5,6 +5,7 @@ import Top from '../top.jsx'
 import Footer from '../footer.jsx'
 
 
+
 const Employees = () => {
     const [employees, setEmployees]= useState([]);
     useEffect(() => { //me permite cargar proyectos
@@ -29,10 +30,14 @@ const Employees = () => {
             </li>
             ))}
         </ul>
+        <ul>
+            <li><Link to={`/`}>Home</Link></li>
+        </ul>
         <Footer />
         </>
     );
 }
+
 
 export default Employees; 
 

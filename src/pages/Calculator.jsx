@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react"
 import Top from '../top.jsx'
 import Footer from '../footer.jsx'
+import Home from "./Home.jsx";
 
 const Calculator = () => {
 
@@ -103,6 +104,7 @@ const Calculator = () => {
 
                 </form>
             </div>
+
             <Footer />
         </>
     )
