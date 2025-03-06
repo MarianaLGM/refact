@@ -19,7 +19,7 @@ const Employees = () => {
             <ul className="containerEmployees">
                 {employees.map((employee)=>(
                 <li key={employee.name}>
-                    <Link to={`/projects/${employee.name}`}>Nombre: {employee.name} Apellido: {employee.lastName} Hobbies: {employee.hobbies.join(', ')} Edad: {employee.age}</Link>
+                    <Link to={`/employees/${employee.name}`}>Nombre: {employee.name} Apellido: {employee.lastName} Hobbies: {employee.hobbies.join(', ')} Edad: {employee.age}</Link>
                 </li>
                 ))}
             </ul>
@@ -29,3 +29,5 @@ const Employees = () => {
 
 }
 export default Employees; 
+
+
