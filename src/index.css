@@ -45,6 +45,19 @@ button:hover {
   border-color: #9e8e3e;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.result {
+  font-size: 1.2em;
+}
+
+span {
+  font-weight: bolder;
+}
 /*
 button:focus,
 button:focus-visible {
