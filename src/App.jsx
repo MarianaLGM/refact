@@ -1,9 +1,9 @@
 
-import './App.css'
+import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Importa tus componentes
+// importamos componentes
 import Home from './pages/Home.jsx';
 import Employees from './pages/Employees.jsx';
 import Calculator from './pages/Calculator.jsx';

@@ -13,8 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 body {
   margin: 0;
   display: flex;
@@ -23,11 +21,11 @@ body {
   min-height: 100vh;
   background-color: antiquewhite;
 }
-/*
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}*/
+}
 
 button {
   border-radius: 8px;
@@ -72,8 +70,8 @@ button:focus-visible {
   margin-top: 20px;
 
 }
-/* formato para cada empleado*/
-.containerEmployees div {
+/* formato para cada empleado div*/
+.containerEmployees{
   background-color: rgb(241, 219, 191);
   border: 1px solid #ddd; 
   border-radius: 8px; 

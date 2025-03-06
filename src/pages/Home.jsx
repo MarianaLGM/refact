@@ -6,10 +6,10 @@ function Home(){
     return (
         <>
         <Top />
-            <h1>¡Te doy la Bienvenida!</h1>
+            <h2>¡Te doy la Bienvenida!</h2>
             <ul>
-                <li><Link to={`/employees`}>Ver lista empleados</Link></li>
-                <li><Link to={`/calculator`}>Ir a calculadora</Link></li>
+                <li><Link to={`/employees`}>Empleados Cocreta</Link></li>
+                <li><Link to={`/calculator`}>Calculadora</Link></li>
             </ul>
         <Footer />
         </>

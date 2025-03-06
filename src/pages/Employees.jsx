@@ -16,10 +16,10 @@ const Employees = () => {
         <>
         <Top />
         <h2>Empleados Cocreta</h2>
-            <ul>
+            <ul className="containerEmployees">
                 {employees.map((employee)=>(
                 <li key={employee.name}>
-                    <Link to={`/projects/${employee.name}`}>{employee.lastName}, {employee.hobbies.join(', ')}, {employee.age}</Link>
+                    <Link to={`/projects/${employee.name}`}>Nombre: {employee.name} Apellido: {employee.lastName} Hobbies: {employee.hobbies.join(', ')} Edad: {employee.age}</Link>
                 </li>
                 ))}
             </ul>
