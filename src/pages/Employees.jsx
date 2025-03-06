@@ -30,9 +30,9 @@ const Employees = () => {
             </li>
             ))}
         </ul>
-        <ul>
-            <li><Link to={`/`}>Home</Link></li>
-        </ul>
+        <div className="go-home">
+            <Link to="/">Home</Link>
+        </div>
         <Footer />
         </>
     );

@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react"
 import Top from '../top.jsx'
 import Footer from '../footer.jsx'
-import Home from "./Home.jsx";
+import {Link} from "react-router-dom"
+
 
 const Calculator = () => {
 
@@ -73,6 +74,7 @@ const Calculator = () => {
             <h2>Calculadora</h2>
             
             <div className="containerCalculator">
+
                 <form onSubmit={handleSubmit}>
 
                     <input
@@ -81,7 +83,6 @@ const Calculator = () => {
                         onChange={(e) => setValue1(e.target.value)}
                         placeholder="Agrega un número" 
                     />
-
                     <button value='+' onClick={() => setSymbol('+')}>+</button>
                     <button value='-' onClick={() => setSymbol('-')}>-</button>
                     <button value='x' onClick={() => setSymbol('x')}>x</button>
@@ -104,6 +105,9 @@ const Calculator = () => {
                     </div>
 
                 </form>
+            </div>
+            <div className="go-home">
+                <Link to="/">Home</Link>
             </div>
             <Footer />
         </>

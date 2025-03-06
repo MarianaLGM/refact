@@ -1,6 +1,6 @@
 import Top from '../top.jsx'
 import Footer from '../footer.jsx'
-import {Link} from  "react-router-dom";
+import {Link} from "react-router-dom"
 
 function Home(){
     return (
