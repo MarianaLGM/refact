@@ -83,6 +83,7 @@ const Calculator = () => {
             <Top />
     
             <h2>Calculadora</h2>
+            
             <div className="containerCalculator">
             <form onSubmit={handleSubmit}>
                 
@@ -110,7 +111,6 @@ const Calculator = () => {
                 </div>
             </form>
             </div>
-
             <Footer />
         </>
     )
