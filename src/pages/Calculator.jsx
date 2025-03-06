@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from "react"
 import Top from '../top.jsx'
 import Footer from '../footer.jsx'
+import Home from "./Home.jsx";
 
 const Calculator = () => {
 
@@ -77,7 +78,7 @@ const Calculator = () => {
         if (e.target.value === '/') { setResult(divide(value1, value2)) };
         }
     
-        return (
+    return (
         <>
             <Top />
     
@@ -107,13 +108,13 @@ const Calculator = () => {
                 <div className='result'>
                 <p>Resultado: {result}</p>
                 </div>
-            
             </form>
             </div>
+
             <Footer />
         </>
-        )
-    }
+    )
+}
     
     export default Calculator;
     
